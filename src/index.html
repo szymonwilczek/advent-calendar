@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kalendarz adwentowy</title>
+
+    <meta
+      name="description"
+      content="A cóż to za prezenty się schowały?"
+    />
+
+    <meta itemprop="name" content="Kalendarz adwentowy" />
+
+    <meta property="og:site_name" content="Kalendarz adwentowy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kalendarz adwentowy - Szymon Wilczek" />
+    <meta
+      property="og:description"
+      content="A cóż to za prezenty się schowały?"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/arcade-classic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/magic.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/static/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/static/favicon/safari-pinned-tab.svg"
+      color="#9933ff"
+    />
+    <meta name="apple-mobile-web-app-title" content="Szymon Wilczek" />
+    <meta name="application-name" content="Szymon Wilczek" />
+    <meta name="msapplication-TileColor" content="#9933ff" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body>
+    <canvas class="webgl"></canvas>
+    <div class="overlay"></div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <div id="cooking">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div id="area">
+        <div id="sides">
+          <div id="pan"></div>
+          <div id="handle"></div>
+        </div>
+        <div id="pancake">
+          <div id="pastry"></div>
+          <div id="pastry2"></div>
+          <div id="pastry3"></div>
+        </div>
+      </div>
+      <h1>Pakowanie prezentów... <span id="progressPercentage"></span>%</h1>
+    </div>
+    <button class="start">Otwórz kalendarz</button>
+
+    <button id="openModalBtn">Open Modal</button>
+    <button id="openModalBtnTobiasz">Open Modal</button>
+
+
+    <dialog id="myModalTobiasz">
+      <img
+        src="assets/img/tobiasz-image.png"
+        alt="tobiasz"
+        id="frogModalImg"
+        width="82"
+        height="117"
+      />
+      <p id="frogModalHeader">TOBIASZ!</p>
+      <p id="myModalContent">
+        Honorable mention dla najśliczniejszego kota jakiego w życiu widziałem.
+      </p>
+
+      <div class="container">
+        <div class="box">
+          <img
+            src="assets/img/tobiasz1.jpg"
+            alt="tobiasz1"
+            class="tobiaszImg"
+          />
+        </div>
+        <div class="box">
+          <img
+            src="assets/img/tobiasz2.jpg"
+            alt="tobiasz2"
+            class="tobiaszImg"
+          />
+        </div>
+        <div class="box">
+          <img
+            src="assets/img/tobiasz3.jpg"
+            alt="tobiasz3"
+            class="tobiaszImg"
+          />
+        </div>
+        <div class="box">
+          <img
+            src="assets/img/tobiasz4.jpg"
+            alt="tobiasz4"
+            class="tobiaszImg"
+          />
+        </div>
+      </div>
+
+      <div id="closeModalContainer">
+        <button id="closeModalBtnTobiasz">
+          <p id="closeModalButtonText">X</p>
+        </button>
+      </div>
+    </dialog>
+  </body>
+
+  <script>
+    document
+      .getElementById("openModalBtn")
+      .addEventListener("click", function () {
+        document.getElementById("myModal").classList.add("show");
+      });
+
+    document
+      .getElementById("closeModalBtn")
+      .addEventListener("click", function () {
+        document.getElementById("myModal").classList.remove("show");
+      });
+
+    document
+      .getElementById("openModalBtnTobiasz")
+      .addEventListener("click", function () {
+        document.getElementById("myModalTobiasz").classList.add("show");
+      });
+
+    document
+      .getElementById("closeModalBtnTobiasz")
+      .addEventListener("click", function () {
+        document.getElementById("myModalTobiasz").classList.remove("show");
+      });
+  </script>
+</html>

@@ -1,0 +1,896 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* height: -webkit-fill-available; */
+}
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+body {
+    overflow: hidden;
+    background-color: #000000;
+    /* min-height: 100vh;
+    min-height: -webkit-fill-available; */
+}
+
+.overlay {
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+
+.overlay.fade {
+    opacity: 0;
+}
+
+h1 {
+    position: absolute;
+    margin: auto;
+    bottom: -5vh;
+    width: 30vh;
+    min-width: 30vmax;
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-size: 2vmax;
+    color: #ffffff;
+    opacity: 0.75;
+
+}
+
+.start {
+    position: fixed;
+    top: calc((100vh - 100px)/2);
+    right: calc((100vw - 200px)/2);
+    width: 200px;
+    height: 100px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: 4rem;
+    font-family: 'Amatic SC';
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+    /* animation: pulse 2.5s linear infinite; */
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .start:hover {
+        color: #9400D3;
+    }
+}
+
+.start.fadeIn {
+    opacity: 1;
+}
+
+.start.fadeOut {
+    opacity: 0;
+}
+
+#cooking {
+    position: relative;
+    margin: auto;
+    top: calc((100vh - 55vmax)/2);
+    width: 30vh;
+    min-width: 30vmax;
+    height: 30vh;
+    min-height: 30vmax;
+    overflow: visible;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#cooking.fade {
+    opacity: 0;
+}
+
+/* @media (orientation: landscape) {
+    #cooking {
+      top: 10vh;
+    }
+  }
+  
+  @media (orientation: portrait) {
+    #cooking {
+      top: 15vh;
+    }
+  } */
+
+#cooking #area {
+    position: absolute;
+    bottom: 0;
+    right: 2.5vw;
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    transform-origin: 15% 60%;
+    animation: flip 2.1s ease-in-out infinite;
+}
+
+#cooking #area #sides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: 15% 60%;
+    animation: switchSide 2.1s ease-in-out infinite;
+}
+
+#cooking #area #sides #handle {
+    position: absolute;
+    bottom: 18%;
+    right: 80%;
+    width: 35%;
+    height: 20%;
+    background-color: transparent;
+    border-top: 1vh solid #ffffff;
+    border-left: 1vh solid transparent;
+    border-radius: 100%;
+    transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
+}
+
+#cooking #area #sides #pan {
+    position: absolute;
+    bottom: 10%;
+    right: 30%;
+    width: 50%;
+    height: 20%;
+    background-color: #ffffff;
+    border-radius: 0 0 1.4em 1.4em;
+    transform-origin: -15% 0;
+}
+
+#cooking #area #pancake {
+    position: absolute;
+    top: 24%;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(85deg);
+    animation: jump 2.1s ease-in-out infinite;
+}
+
+#cooking #area #pancake #pastry {
+    position: absolute;
+    bottom: 26%;
+    right: 40%;
+    width: 20%;
+    height: 30%;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 #ffffff;
+    border-radius: 100%;
+    transform-origin: -140% 0;
+    animation: fly 2.1s ease-in-out infinite;
+}
+
+/* #cooking #area #pancake #pastry {
+    position: absolute;
+    bottom: 26%;
+    right: 37%;
+    width: 40%;
+    height: 45%;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 #ffffff;
+    border-radius: 100%;
+    transform-origin: -20% 0;
+    animation: fly 2.1s ease-in-out infinite;
+} */
+
+#cooking #area #pancake #pastry2 {
+    position: absolute;
+    bottom: 26%;
+    right: 60%;
+    width: 15%;
+    height: 20%;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 #ffffff;
+    border-radius: 100%;
+    transform-origin: -80% 0;
+    animation: fly 2.1s ease-in-out infinite;
+}
+
+#cooking #area #pancake #pastry3 {
+    position: absolute;
+    bottom: 26%;
+    right: 70%;
+    width: 10%;
+    height: 25%;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 #ffffff;
+    border-radius: 100%;
+    transform-origin: -160% 0;
+    animation: fly 2.1s ease-in-out infinite;
+}
+
+#cooking .bubble {
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: 0 0 0.25vh #ffffff;
+    opacity: 0;
+}
+
+#cooking .bubble:nth-child(1) {
+    margin-top: -9.5vh;
+    left: 58%;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: #ffffff;
+    animation: bubble 2s cubic-bezier(0.53, 0.16, 0.39, 0.96) infinite;
+}
+
+#cooking .bubble:nth-child(2) {
+    margin-top: -10vh;
+    left: 52%;
+    width: 2vh;
+    height: 2vh;
+    background-color: #ffffff;
+    animation: bubble 2s ease-in-out 0.35s infinite;
+}
+
+#cooking .bubble:nth-child(3) {
+    margin-top: -8.8vh;
+    left: 50%;
+    width: 1.5vh;
+    height: 1.5vh;
+    background-color: #ffffff;
+    animation: bubble 1.5s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
+}
+
+#cooking .bubble:nth-child(4) {
+    margin-top: -9.7vh;
+    left: 56%;
+    width: 1.2vh;
+    height: 1.2vh;
+    background-color: #ffffff;
+    animation: bubble 1.8s cubic-bezier(0.53, 0.16, 0.39, 0.96) 0.55s infinite;
+}
+
+#cooking .bubble:nth-child(5) {
+    margin-top: -9.7vh;
+    left: 63%;
+    width: 1.1vh;
+    height: 1.1vh;
+    background-color: #ffffff;
+    animation: bubble 1.6s ease-in-out 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: scale(1.2, 1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 0.25;
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    5% {
+        transform: rotate(-27deg);
+    }
+
+    30%,
+    50% {
+        transform: rotate(0deg);
+    }
+
+    55% {
+        transform: rotate(27deg);
+    }
+
+    83.3% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes switchSide {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 24;
+        transform: rotateX(85deg);
+    }
+
+    25% {
+        top: 10%;
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        top: 30%;
+        transform: rotateX(85deg);
+    }
+
+    75% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(85deg);
+    }
+}
+
+@keyframes fly {
+    0% {
+        bottom: 26%;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        bottom: 40%;
+    }
+
+    50% {
+        bottom: 26%;
+        transform: rotate(-190deg);
+    }
+
+    80% {
+        bottom: 40%;
+    }
+
+    100% {
+        bottom: 26%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: scale(0.15, 0.15);
+        top: 80%;
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1, 1.1);
+        opacity: .4;
+    }
+
+    100% {
+        transform: scale(0.33, 0.33);
+        top: 60%;
+        opacity: 0;
+    }
+}
+
+.info {
+    /* move it to the right bottom corner */
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    /* set the size */
+    width: 40px;
+    height: 40px;
+    visibility: hidden;
+
+    /* make it a little bit transparent */
+    opacity: 0.7;
+    z-index: 1000;
+}
+
+.info:hover {
+    /* scale image to the left */
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+
+
+
+.modal {
+    opacity: 0;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: -10;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.873);
+    transition: top 0.3s, opacity 0.3s;
+}
+
+.modal.show {
+    z-index: 1;
+    top: 0;
+    opacity: 1;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background: rgba(255, 255, 255, 0.292);
+    box-shadow: 0 8px 32px 0 rgba(169, 81, 231, 0.65);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    margin: 10% auto;
+    padding: 2%;
+    width: 30em;
+    height: 20em;
+    opacity: 0.7;
+    border-radius: 5%;
+
+}
+
+/* The Close Button */
+.close {
+    font-family: 'Joystix';
+    font-size: 1.5rem;
+    color: #ff1e1e;
+    text-shadow: 3px -1px 1px #000000;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.title {
+    /* make title in center */
+    font-family: 'Crackman';
+    opacity: 1;
+    color: #fafafa;
+    text-align: center;
+    text-shadow: 3px 1px 0px #000000;
+    margin-left: 8%;
+    margin-top: -2%;
+    pointer-events: none;
+    user-select: none;
+
+    /* set the font size */
+    font-size: 2rem;
+}
+
+.close:hover,
+.close:focus {
+    color: #931111;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subtitle {
+    font-family: 'Crackman';
+    pointer-events: none;
+    opacity: 1;
+    text-shadow: 3px 1px 0px #000000;
+    color: #fafafa;
+    user-select: none;
+    text-align: center;
+    margin-top: 3%;
+    transform: translate(50%, 0);
+    margin-right: 20%;
+
+    /* set the font size */
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.mkey {
+    vertical-align: middle;
+    display: inline-block;
+    color: #fafafa;
+    /* block pointer events */
+    pointer-events: none;
+    /* block selecting */
+    user-select: none;
+    /* margin-left: 1%; */
+    margin-top: 0.5%;
+
+    /* make image responsive */
+    width: 6%;
+    height: 6%;
+
+}
+
+.description {
+    font-family: 'Joystix';
+    user-select: none;
+    pointer-events: none;
+    opacity: 1;
+    color: #ffffff;
+    text-shadow: 3px 1px 0px #000000;
+    text-align: center;
+    margin-top: 4%;
+    margin-left: 5%;
+
+    /* set the font size */
+    font-size: 1em;
+}
+
+.description .widok {
+    color: #ff75f9; 
+}
+
+.description .kontakt {
+    color: #ff0472; 
+}
+
+.description .projekty {
+    color: #ff0e8b; 
+}
+
+.description .o-mnie {
+    color: #16edff; 
+}
+
+.description .blog {
+    color: #59ffff; 
+}
+
+.description .uznanie {
+    color: #ff8801; 
+}
+
+
+@font-face {
+    font-family: 'Crackman';
+    src: url('assets/fonts/Crackman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Joystix';
+    src: url('assets/fonts/Joystix.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Frog modal */
+
+#myModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(169, 81, 231, 0.65) 25%, rgba(90, 86, 192, 0.65) 62%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadeInUp 0.6s ease, slideInBottom 0.6s ease;
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translate(-50%, 75%);
+    }
+
+    to {
+        transform: translateY(-50%, -75%);
+    }
+}
+
+
+#myModal.show {
+    display: block;
+    opacity: 1;
+}
+
+#myModalContent {
+    font-family: 'Joystix';
+    font-size: 1.2rem;
+    text-shadow: 3px 1px 0px #000000;
+    color: #ffffff;
+}
+
+#frogModalImg {
+    filter: drop-shadow(0 0 5px #000000);
+}
+
+#frogModalHeader {
+    font-family: 'Crackman';
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 3px 1px 1px #000000;
+}
+
+#openModalBtn {
+    display: none;
+}
+
+#closeModalContainer {
+    display: fixed;
+}
+
+#closeModalBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+#closeModalButtonText {
+    font-family: 'Joystix';
+    font-size: 1.5rem;
+    color: #ff1e1e;
+    text-shadow: 3px -1px 1px #000000;
+}
+
+@media (max-width: 600px) {
+    #myModal {
+        top: auto;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        animation: slideInBottom 0.4s ease;
+        /* Dodane */
+    }
+
+    #closeModalBtn {
+        top: 5px;
+        right: 1%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 425px) {
+    #closeModalBtn {
+        top: 5px;
+        margin-right: 4%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* Tobiasz modal */
+
+#myModalTobiasz {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(67, 67, 67, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: fadeInUp 0.6s ease, slideInBottom 0.6s ease;
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translate(-50%, 75%);
+    }
+
+    to {
+        transform: translateY(-50%, -75%);
+    }
+}
+
+
+#myModalTobiasz.show {
+    display: block;
+    opacity: 1;
+}
+
+#frogModalImg {
+    filter: drop-shadow(0 0 5px #000000);
+}
+
+#frogModalHeader {
+    font-family: 'Crackman';
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 3px 1px 1px #000000;
+}
+
+#openModalBtnTobiasz {
+    display: none;
+}
+
+#closeModalContainer {
+    display: fixed;
+}
+
+#closeModalBtnTobiasz {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+#closeModalButtonText {
+    font-family: 'Joystix';
+    font-size: 1.5rem;
+    color: #ff1e1e;
+    text-shadow: 3px -1px 1px #000000;
+}
+
+@media (max-width: 600px) {
+    #myModalTobiasz {
+        top: auto;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        animation: slideInBottom 0.4s ease;
+        /* Dodane */
+    }
+
+    #closeModalBtnTobiasz {
+        top: 5px;
+        right: 1%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 425px) {
+    #closeModalBtnTobiasz {
+        top: 5px;
+        margin-right: 4%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+.container{
+    margin: 5px auto;
+    width:400px;
+    height:400px;
+    display:grid;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    .box{
+      padding:20px;
+      border-radius:10px;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:40px;
+      font-family:sans-serif;
+    }
+  
+  }
+  
+
+.tobiaszImg {
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+    width: 150px;
+    height: 150px;
+}
+
+.tobiaszImg:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.348);
+}
+
+@media screen and (max-width: 600px) {
+    .tobiaszImg {
+        border-radius: 25px;
+        transition: transform 0.3s ease-in-out;
+        width: 100px;
+        height: 100px;
+    }
+    .container{
+        margin: auto;
+        width:200px;
+        height:auto;
+        display:grid;
+        grid-template-columns: 90px 90px;
+        grid-row: auto auto;
+        grid-column-gap: 40px;
+        grid-row-gap: 20px;
+        .box{
+          padding:5px;
+          border-radius:10px;
+          color:#fff;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:40px;
+          font-family:sans-serif;
+        }
+      }
+}
