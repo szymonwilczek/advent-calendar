@@ -35,7 +35,6 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "@wildpeaks/three-webpack-plugin": "^2.0.0",
     "three": "^0.159.0"
   }
 }
