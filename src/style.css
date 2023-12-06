@@ -824,6 +824,7 @@ h1 {
 }
 
 #frogModalImg {
+    border-radius: 5px;
     filter: drop-shadow(0 0 5px #000000);
 }
 
