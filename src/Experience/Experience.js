@@ -97,6 +97,13 @@ export default class Experience {
     tree_point.position.set(-3.42, -1.25, -4.8);
     this.scene.add(tree_point);
 
+    // Wolf light
+    const wolf_point = new THREE.PointLight(0xdfe3ff, 1);
+    wolf_point.distance = 3;
+    wolf_point.castShadow = false;
+    wolf_point.position.set(1.4, -1.5, -4);
+    this.scene.add(wolf_point);
+
     // Stars
     const starsGeometry = new THREE.BufferGeometry();
     const starsMaterial = new THREE.PointsMaterial({

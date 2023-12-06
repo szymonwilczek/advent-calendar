@@ -351,6 +351,104 @@ export default class RayCaster {
           if (modalTobiasz.classList.contains("show")) return;
           this.controller.treeControls.xMasTree();
           break;
+        case this.giftOneHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentOne();
+          break;
+        case this.giftTwoHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwo();
+          break;
+        case this.giftThreeHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentThree();
+          break;
+        case this.giftFourHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentFour();
+          break;
+        case this.giftFiveHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentFive();
+          break;
+        case this.giftSixHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentSix();
+          break;
+        case this.giftSevenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentSeven();
+          break;
+        case this.giftEightHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentEight();
+          break;
+        case this.giftNineHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentNine();
+          break;
+        case this.giftTenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTen();
+          break;
+        case this.giftElevenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentEleven();
+          break;
+        case this.giftTwelveHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwelve();
+          break;
+        case this.giftThirteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentThirteen();
+          break;
+        case this.giftFourteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentFourteen();
+          break;
+        case this.giftFifteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentFifteen();
+          break;
+        case this.giftSixteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentSixteen();
+          break;
+        case this.giftSeventeenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentSeventeen();
+          break;
+        case this.giftEighteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentEighteen();
+          break;
+        case this.giftNineteenHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentNineteen();
+          break;
+        case this.giftTwentyHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwenty();
+          break;
+        case this.giftTwentyOneHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwentyOne();
+          break;
+        case this.giftTwentyTwoHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwentyTwo();
+          break;
+        case this.giftTwentyThreeHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwentyThree();
+          break;
+        case this.giftTwentyFourHitBox:
+          if (modalTobiasz.classList.contains("show")) return;
+          this.controller.presentControls.presentTwentyFour();
+          break;
+        default:
+          break;
       }
     }
   }

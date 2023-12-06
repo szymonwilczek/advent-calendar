@@ -23,6 +23,7 @@ export default class Controller {
     this.setCamControls();
     this.setAnimalControls();
     this.setTreeControls();
+    this.setPresentControls();
 
     this.resources.on("ready", () => {
       this.scenery = this.experience.world.scenery;
