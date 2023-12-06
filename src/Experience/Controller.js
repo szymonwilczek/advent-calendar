@@ -11,6 +11,14 @@ export default class Controller {
     this.config = this.experience.config;
     this.animations = this.experience.animations;
 
+    // Add the mouse object to capture mouse coordinates
+    this.mouse = { x: 0, y: 0 };
+
+    // Set up event listeners for mouse movement
+    window.addEventListener("mousemove", (event) => {
+      this.onMouseMove(event);
+    });
+
     this.setLogic();
     this.setCamControls();
     this.setAnimalControls();
@@ -20,6 +28,11 @@ export default class Controller {
       this.scenery = this.experience.world.scenery;
       this.materials = this.experience.materials;
     });
+  }
+
+  onMouseMove(event) {
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
   }
 
   setLogic() {
