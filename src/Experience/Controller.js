@@ -10,6 +10,7 @@ export default class Controller {
     this.preLoader = this.experience.preLoader;
     this.config = this.experience.config;
     this.animations = this.experience.animations;
+    this.password = null;
 
     // Add the mouse object to capture mouse coordinates
     this.mouse = { x: 0, y: 0 };
@@ -60,11 +61,47 @@ export default class Controller {
     };
   }
 
+  checkPassword() {
+    if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      // Get the entered password from the input field
+      const enteredPassword = document.getElementById("passwordInput").value;
+
+      // Check if the entered password is correct
+      if (enteredPassword && enteredPassword.toLowerCase() === "chuj") {
+        this.updateModalContent(
+          "Nowy Tytuł",
+          "Nowy Opis",
+          "Nowa treść po wprowadzeniu poprawnego hasła."
+        );
+
+        // Store the password
+        this.password = enteredPassword;
+      } else {
+        console.log("Incorrect password");
+        // Handle incorrect password (optional)
+      }
+    }
+  }
+
   setPresentControls() {
     this.presentControls = {};
     this.presentControls.presentOne = async () => {
       if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
         this.sounds.playBellsClick();
+
+        this.checkPassword();
+
+        let image = document.getElementById("frogModalImg");
+        image.src = "https://i.imgur.com/CpazN4z.png";
+        let title = document.getElementById("modalHeader");
+        title.innerHTML = "1 grudnia";
+        let opis = document.getElementById("contentHeader");
+        opis.innerHTML = "Przytulanie & film & goraca czekolada";
+        let text = document.getElementById("myModalContent");
+        text.innerHTML =
+          "Pierwszy dzień grudnia, pierwszy dzień kalendarza adwentowego. Czas na pierwszą czekoladkę!";
+
+        document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
       }
     };

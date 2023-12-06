@@ -91,48 +91,26 @@
 
 
     <dialog id="myModalTobiasz">
+      <p id="modalHeader" class="modalHeader">Dzień X</p>
       <img
         src="assets/img/tobiasz-image.png"
         alt="tobiasz"
         id="frogModalImg"
-        width="82"
-        height="117"
+        width="100"
+        height="auto"
       />
-      <p id="frogModalHeader">TOBIASZ!</p>
+      <p id="contentHeader" class="modalHeader">Opis</p>
       <p id="myModalContent">
         Honorable mention dla najśliczniejszego kota jakiego w życiu widziałem.
       </p>
 
-      <div class="container">
-        <div class="box">
-          <img
-            src="assets/img/tobiasz1.jpg"
-            alt="tobiasz1"
-            class="tobiaszImg"
-          />
-        </div>
-        <div class="box">
-          <img
-            src="assets/img/tobiasz2.jpg"
-            alt="tobiasz2"
-            class="tobiaszImg"
-          />
-        </div>
-        <div class="box">
-          <img
-            src="assets/img/tobiasz3.jpg"
-            alt="tobiasz3"
-            class="tobiaszImg"
-          />
-        </div>
-        <div class="box">
-          <img
-            src="assets/img/tobiasz4.jpg"
-            alt="tobiasz4"
-            class="tobiaszImg"
-          />
-        </div>
-      </div>
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Wpisz hasło"
+        autocomplete="off"
+      />
+      <button id="passwordBtn">Sprawdź</button>
 
       <div id="closeModalContainer">
         <button id="closeModalBtnTobiasz">
@@ -140,31 +118,24 @@
         </button>
       </div>
     </dialog>
+    <script>
+      document
+        .getElementById("openModalBtnTobiasz")
+        .addEventListener("click", function () {
+          document.getElementById("myModalTobiasz").classList.add("show");
+        });
+  
+      document
+        .getElementById("closeModalBtnTobiasz")
+        .addEventListener("click", function () {
+          document.getElementById("myModalTobiasz").classList.remove("show");
+        });
+
+      document
+      .getElementById("frogModalBtn")
+      .addEventListener("click", function () {
+        console.log(document.getElementById("frogModalInput").value);
+      });
+    </script>
   </body>
-
-  <script>
-    document
-      .getElementById("openModalBtn")
-      .addEventListener("click", function () {
-        document.getElementById("myModal").classList.add("show");
-      });
-
-    document
-      .getElementById("closeModalBtn")
-      .addEventListener("click", function () {
-        document.getElementById("myModal").classList.remove("show");
-      });
-
-    document
-      .getElementById("openModalBtnTobiasz")
-      .addEventListener("click", function () {
-        document.getElementById("myModalTobiasz").classList.add("show");
-      });
-
-    document
-      .getElementById("closeModalBtnTobiasz")
-      .addEventListener("click", function () {
-        document.getElementById("myModalTobiasz").classList.remove("show");
-      });
-  </script>
 </html>
