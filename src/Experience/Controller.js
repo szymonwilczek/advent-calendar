@@ -69,19 +69,32 @@ export default class Controller {
     if (currentMonth === 12) {
       // Check if the current date has passed or is today
       if (currentDay < presentNumber) {
-        console.log("Current day is before the specified present number");
         // If the current day is before the specified present number, disallow clicking
+        this.showLockedModal();
         return false;
       } else {
         // Otherwise, allow clicking
-        console.log("Current day is after the specified present number");
         return true;
       }
     } else {
-      console.log("Current month is not December");
       // If it's not December, or the events have finished, disallow clicking
       return false;
     }
+  }
+
+  showLockedModal() {
+    this.sounds.playBellsClick();
+    let image = document.getElementById("frogModalImg");
+    image.src = "https://i.imgur.com/Imq6h7S.png";
+    let title = document.getElementById("modalHeader");
+    title.innerHTML = "Zablokowane";
+    let opis = document.getElementById("contentHeader");
+    opis.innerHTML = "To zadanie jest jeszcze zablokowane";
+    let text = document.getElementById("myModalContent");
+    text.innerHTML =
+      "Ta część tego kalendarza będzie dopiero dostępna. Sprawdź datę!";
+
+    document.getElementById("openModalBtnTobiasz").click();
   }
 
   setPresentControls() {
@@ -111,7 +124,12 @@ export default class Controller {
     };
 
     this.presentControls.presentTwo = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 2;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
@@ -129,7 +147,12 @@ export default class Controller {
     };
 
     this.presentControls.presentThree = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 3;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
@@ -147,7 +170,12 @@ export default class Controller {
     };
 
     this.presentControls.presentFour = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 4;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
@@ -166,7 +194,12 @@ export default class Controller {
     };
 
     this.presentControls.presentFive = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 5;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
@@ -212,8 +245,8 @@ export default class Controller {
       const presentNumber = 7;
       if (
         this.logic.buttonsLocked === false &&
-        this.logic.mode === "menu"
-        // this.checkDate(presentNumber)
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
       ) {
         this.sounds.playBellsClick();
 
@@ -233,13 +266,18 @@ export default class Controller {
     };
 
     this.presentControls.presentEight = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 8;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/zZayRyi.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "8 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Noc filmowa";
         let text = document.getElementById("myModalContent");
@@ -252,13 +290,18 @@ export default class Controller {
     };
 
     this.presentControls.presentNine = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 9;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/gZfr4EY.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "9 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Pieczenie cynamonek";
         let text = document.getElementById("myModalContent");
@@ -271,13 +314,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 10;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/nMJHgX2.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "10 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Skarpety swiateczne";
         let text = document.getElementById("myModalContent");
@@ -290,13 +338,18 @@ export default class Controller {
     };
 
     this.presentControls.presentEleven = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 11;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/QACkCQx.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "11 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Degustacja wina";
         let text = document.getElementById("myModalContent");
@@ -309,14 +362,19 @@ export default class Controller {
     };
 
     this.presentControls.presentTwelve = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 12;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         // Poprawić tą fotkę żeby była zaokrąglona
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/KGKlXCn.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "12 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Ekspres polarny";
         let text = document.getElementById("myModalContent");
@@ -329,13 +387,18 @@ export default class Controller {
     };
 
     this.presentControls.presentThirteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 13;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/E92iOSN.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "13 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Wybor swiatecznego filmu";
         let text = document.getElementById("myModalContent");
@@ -348,13 +411,18 @@ export default class Controller {
     };
 
     this.presentControls.presentFourteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 14;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/UFS1lBg.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "14 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Bitwa na sniezki";
         let text = document.getElementById("myModalContent");
@@ -367,13 +435,18 @@ export default class Controller {
     };
 
     this.presentControls.presentFifteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 15;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/jtQQowT.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "15 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "List milosny z rzeczami ktore w Tobie kocham";
         let text = document.getElementById("myModalContent");
@@ -386,13 +459,18 @@ export default class Controller {
     };
 
     this.presentControls.presentSixteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 16;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/vC35vl9.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "16 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Nawet romantyczniejsza randka";
         let text = document.getElementById("myModalContent");
@@ -404,13 +482,18 @@ export default class Controller {
     };
 
     this.presentControls.presentSeventeen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 17;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/KxcD1w9.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "17 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Pieczenie ze starego przepisu";
         let text = document.getElementById("myModalContent");
@@ -423,13 +506,18 @@ export default class Controller {
     };
 
     this.presentControls.presentEighteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 18;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/9ok6eOP.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "18 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Zbudowanie balwana";
         let text = document.getElementById("myModalContent");
@@ -442,13 +530,18 @@ export default class Controller {
     };
 
     this.presentControls.presentNineteen = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 19;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/rEpcKpe.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "19 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Karciana gra swiateczna";
         let text = document.getElementById("myModalContent");
@@ -461,13 +554,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTwenty = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 20;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/k4hlGP9.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "20 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Zimowa herbatka";
         let text = document.getElementById("myModalContent");
@@ -480,13 +578,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTwentyOne = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 21;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/w8jfDfA.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "21 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Robienie kartek swiatecznych";
         let text = document.getElementById("myModalContent");
@@ -498,13 +601,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTwentyTwo = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 22;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/fDIc0li.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "22 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Zakupy swiateczne";
         let text = document.getElementById("myModalContent");
@@ -517,13 +625,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTwentyThree = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 23;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/e7SMQqq.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "23 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Wspolne lyzwy";
         let text = document.getElementById("myModalContent");
@@ -536,13 +649,18 @@ export default class Controller {
     };
 
     this.presentControls.presentTwentyFour = async () => {
-      if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
+      const presentNumber = 24;
+      if (
+        this.logic.buttonsLocked === false &&
+        this.logic.mode === "menu" &&
+        this.checkDate(presentNumber)
+      ) {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/p0bwtnB.png";
         let title = document.getElementById("modalHeader");
-        title.innerHTML = "7 grudnia";
+        title.innerHTML = "24 grudnia";
         let opis = document.getElementById("contentHeader");
         opis.innerHTML = "Spedzenie dnia z Mikolajem";
         let text = document.getElementById("myModalContent");
