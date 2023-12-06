@@ -709,6 +709,17 @@ h1 {
     text-shadow: 3px 1px 1px #000000;
 }
 
+.gift {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    /* center this div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
 
 #openModalBtn {
     display: none;

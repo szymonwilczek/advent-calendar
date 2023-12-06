@@ -65,23 +65,11 @@
     <div class="overlay"></div>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+   
     <div id="cooking">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div id="area">
-        <div id="sides">
-          <div id="pan"></div>
-          <div id="handle"></div>
-        </div>
-        <div id="pancake">
-          <div id="pastry"></div>
-          <div id="pastry2"></div>
-          <div id="pastry3"></div>
-        </div>
-      </div>
+
+    <dotlottie-player class="gift" src="https://lottie.host/d6a9722b-8a60-4cbd-ad21-574a55b52e92/DfeYpElNzg.lottie" speed="1" loop autoplay></dotlottie-player>
       <h1>Pakowanie prezentów... <span id="progressPercentage"></span>%</h1>
     </div>
     <button class="start">Otwórz kalendarz</button>
@@ -110,7 +98,9 @@
         placeholder="Wpisz hasło"
         autocomplete="off"
       />
-      <button id="passwordBtn">Sprawdź</button>
+      <button id="passwordBtn" onclick="console.log(
+        document.getElementById('passwordInput').value
+      )">Sprawdź</button>
 
       <div id="closeModalContainer">
         <button id="closeModalBtnTobiasz">
@@ -136,6 +126,13 @@
       .addEventListener("click", function () {
         console.log(document.getElementById("frogModalInput").value);
       });
+
+      document
+      .getElementById("passwordBtn")
+      .addEventListener("click", function () {
+        console.log(document.getElementById("passwordInput").value);
+      });
+
     </script>
   </body>
 </html>

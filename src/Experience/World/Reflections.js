@@ -180,7 +180,7 @@ class Reflector extends Mesh {
 
       // Render
 
-      renderTarget.texture.encoding = renderer.outputEncoding;
+      renderTarget.texture.colorSpace = renderer.outputColorSpace;
 
       scope.visible = false;
 

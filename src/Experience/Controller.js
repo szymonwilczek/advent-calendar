@@ -62,24 +62,19 @@ export default class Controller {
   }
 
   checkPassword() {
-    if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
-      // Get the entered password from the input field
-      const enteredPassword = document.getElementById("passwordInput").value;
+    // Pobierz wartość hasła z inputa
+    const passwordInput = document.getElementById("passwordInput");
+    const enteredPassword = passwordInput.value;
 
-      // Check if the entered password is correct
-      if (enteredPassword && enteredPassword.toLowerCase() === "chuj") {
-        this.updateModalContent(
-          "Nowy Tytuł",
-          "Nowy Opis",
-          "Nowa treść po wprowadzeniu poprawnego hasła."
-        );
-
-        // Store the password
-        this.password = enteredPassword;
-      } else {
-        console.log("Incorrect password");
-        // Handle incorrect password (optional)
-      }
+    // Tutaj możesz dodać logikę do sprawdzenia hasła
+    if (enteredPassword === "TWOJE_HASLO") {
+      // Hasło poprawne, wykonaj odpowiednie działania
+      console.log("Poprawne hasło!");
+      // Możesz dodać tutaj kod do otwarcia kolejnego okna, ukrycia prezentów itp.
+    } else {
+      // Hasło niepoprawne, wykonaj odpowiednie działania
+      console.log("Niepoprawne hasło!");
+      // Możesz dodać tutaj kod do wyświetlenia komunikatu o błędzie itp.
     }
   }
 
@@ -88,8 +83,6 @@ export default class Controller {
     this.presentControls.presentOne = async () => {
       if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
         this.sounds.playBellsClick();
-
-        this.checkPassword();
 
         let image = document.getElementById("frogModalImg");
         image.src = "https://i.imgur.com/CpazN4z.png";

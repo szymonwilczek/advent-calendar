@@ -11,7 +11,7 @@ export default class World {
 
     // Wait for resources
     this.resources.on("ready", () => {
-      // Setup
+      //wait for 2 seconds
       this.scenery = new ChristmasScenery();
       this.reflections = new Reflections();
     });
