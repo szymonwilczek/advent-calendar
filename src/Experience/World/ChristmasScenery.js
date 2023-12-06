@@ -61,9 +61,6 @@ export default class ChristmasScenery {
     );
 
     this.floor = this.model.children.find((child) => child.name === "floor");
-
-    this.moon = this.model.children.find((child) => child.name === "Moon");
-    console.log(this.moon);
   }
 
   setMaterials() {

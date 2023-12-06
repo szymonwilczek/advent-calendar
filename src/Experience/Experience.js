@@ -136,6 +136,13 @@ export default class Experience {
     this.stars = new THREE.Points(starsGeometry, starsMaterial);
     this.scene.add(this.stars);
 
+    // Moon
+    const moonGeometry = new THREE.SphereGeometry(3, 32, 32);
+    const moonMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    this.moon = new THREE.Mesh(moonGeometry, moonMaterial);
+    this.moon.position.set(-10, 70, 100);
+    this.scene.add(this.moon);
+
     // Light that illuminates the scene from all directions (moon light)
     this.ambientLight = new THREE.AmbientLight(0xffffff, 25); // Set intensity as needed
     this.ambientLight.castShadow = true;
@@ -175,12 +182,13 @@ export default class Experience {
   }
 
   update() {
-    // Update stars position based on user movement (mouse position)
-    const mouseX = (this.controller.mouse.x - 0.5) * 5;
-    const mouseY = (this.controller.mouse.y - 0.5) * 0.5;
+    // Update stars and moon position based on user movement (mouse position)
+    const mouseX = (this.controller.mouse.x - 0.5) * 10;
+    const mouseY = (this.controller.mouse.y - 0.5) * 2;
 
     this.stars.position.x += (mouseX - this.stars.position.x) * 0.02;
     this.stars.position.y += (-mouseY - this.stars.position.y) * 0.005;
+    this.moon.position.x += (mouseX - this.moon.position.x) * 0.02;
 
     this.camera.update();
     this.world.update();
