@@ -115,14 +115,13 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/R5QZtS9.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "2 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Spacerek w zasniezonym lesie";
         let text = document.getElementById("myModalContent");
-        text.innerHTML =
-          "Drugi dzień grudnia, drugi dzień kalendarza adwentowego. Czas na drugą czekoladkę!";
+        text.innerHTML = "Chciałbyś się wybrać na spacer?";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -134,14 +133,13 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/r9M4Evk.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "3 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Wspolne pieczenie piernikow";
         let text = document.getElementById("myModalContent");
-        text.innerHTML =
-          "Trzeci dzień grudnia, trzeci dzień kalendarza adwentowego. Czas na trzecią czekoladkę!";
+        text.innerHTML = "Juz czuje ten zapach, a moze potem je udekorujemy?";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -153,14 +151,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/rEpcKpe.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "4 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Wspolna gra swiateczna";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Czwarty dzień grudnia, czwarty dzień kalendarza adwentowego. Czas na czwartą czekoladkę!";
+          "Trochę rywalizacji nie zaszkodzi nawet w święta, prawda?";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -172,14 +170,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/TyqE2PX.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "5 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Masaz";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Piąty dzień grudnia, piąty dzień kalendarza adwentowego. Czas na piątą czekoladkę!";
+          "Masz ostatnio dużo na głowie, przydałby Ci się odstresowujący masaż.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -196,14 +194,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/lcOxm52.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "6 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Romantyczna randka";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Szósty dzień grudnia, szósty dzień kalendarza adwentowego. Czas na szóstą czekoladkę!";
+          "Już sporo minęło od naszej ostatniej randki, to chyba czas na kolejną.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -220,14 +218,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/Tkxyekx.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Swiateczne kino";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Czas na jakąś świąteczną premierę filmową. Coś znajdziemy.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -239,14 +237,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/zZayRyi.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Noc filmowa";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Może i kino było poprzednio, ale nic nie pobije klimatu nocnego maratonu filmowego.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -258,14 +256,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/gZfr4EY.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Pieczenie cynamonek";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Już tak długo o tym mówimy, ten pomysł musi w końcu dojść do skutku.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -296,14 +294,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/QACkCQx.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Degustacja wina";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Zajarałaś mnie winem, to może wspólnie sobie je wypijemy?";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -314,15 +312,16 @@ export default class Controller {
       if (this.logic.buttonsLocked === false && this.logic.mode === "menu") {
         this.sounds.playBellsClick();
 
+        // Poprawić tą fotkę żeby była zaokrąglona
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/KGKlXCn.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Ekspres polarny";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Wiem, że kochasz ten film. Nadszedł czas żeby go w końcu świątecznie zobaczyć.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -334,14 +333,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/E92iOSN.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Wybor swiatecznego filmu";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Znacz o wiele więcej filmów świątecznych niż ja. Wybierz najlepszy.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
@@ -353,14 +352,14 @@ export default class Controller {
         this.sounds.playBellsClick();
 
         let image = document.getElementById("frogModalImg");
-        image.src = "https://i.imgur.com/0W9qz7B.png";
+        image.src = "https://i.imgur.com/UFS1lBg.png";
         let title = document.getElementById("modalHeader");
         title.innerHTML = "7 grudnia";
         let opis = document.getElementById("contentHeader");
-        opis.innerHTML = "Kolejny film";
+        opis.innerHTML = "Bitwa na sniezki";
         let text = document.getElementById("myModalContent");
         text.innerHTML =
-          "Siódmy dzień grudnia, siódmy dzień kalendarza adwentowego. Czas na siódmą czekoladkę!";
+          "Już czuję to przyszykowane masełko dla Ciebie. Załóż kaptur.";
 
         document.getElementById("openModalBtnTobiasz").click();
         await this.sleep(250);
