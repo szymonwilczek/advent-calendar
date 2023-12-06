@@ -74,7 +74,6 @@
     </div>
     <button class="start">Otwórz kalendarz</button>
 
-    <button id="openModalBtn">Open Modal</button>
     <button id="openModalBtnTobiasz">Open Modal</button>
 
 
@@ -89,18 +88,18 @@
       />
       <p id="contentHeader" class="modalHeader">Opis</p>
       <p id="myModalContent">
-        Honorable mention dla najśliczniejszego kota jakiego w życiu widziałem.
+       modalContent
       </p>
 
-      <input
+      <!-- <input
         type="password"
         id="passwordInput"
         placeholder="Wpisz hasło"
         autocomplete="off"
       />
-      <button id="passwordBtn" onclick="console.log(
-        document.getElementById('passwordInput').value
-      )">Sprawdź</button>
+      <button id="passwordBtn"">Sprawdź</button>
+
+      <div id="passwordCheck"></div> -->
 
       <div id="closeModalContainer">
         <button id="closeModalBtnTobiasz">
@@ -120,12 +119,6 @@
         .addEventListener("click", function () {
           document.getElementById("myModalTobiasz").classList.remove("show");
         });
-
-      document
-      .getElementById("frogModalBtn")
-      .addEventListener("click", function () {
-        console.log(document.getElementById("frogModalInput").value);
-      });
 
       document
       .getElementById("passwordBtn")
